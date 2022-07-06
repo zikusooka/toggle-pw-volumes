@@ -6,7 +6,14 @@ Uses
 -----
 Cycle through all sessions of app (e.g VLC) and unmute/mute volume
 I use it to watch multiple TV channels especially during prime news hour
-This script must be run by the user who is playing application to control
+
+TIP
+---
+Use keyboard custom shortcuts in GNOME to assign a custom key that you can 
+press to toggle the volume
+i.e. GNOME Settings >> Keyboard >> View and Customize Shortcuts 
+
+NOTE: This script must be run by the user who is playing application to control
 i.e. pipewire must be running
 
 
