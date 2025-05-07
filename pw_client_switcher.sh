@@ -1,5 +1,5 @@
 #!/bin/sh
-# Cycle through all sessions of app (e.g VLC) and unmute/mute volume 
+# Cycle through all media sessions of app (e.g VLC, MPV, FFPlay, Firefox etc) and unmute/mute volume 
 # I used it to watch multiple TV channels especially during prime news hour
 # This script must be run by the user who is playing application to control
 # i.e. pipewire must be running
@@ -7,7 +7,7 @@
 # Variables
 CLIENT_VOLUME="120%"
 CLIENT_LIST_FILE=/tmp/pw-clients-switcher.log
-CLIENT_NUMBERS=$(/usr/bin/pw-cli ls Node | grep -B 6 'Stream/Output/Audio' | grep 'type PipeWire:Interface:Node' | cut -d ',' -f1 | awk '{print $2}')
+CLIENT_NUMBERS=$($(which pw-dump) | jq '.[] | select(.info.props["media.class"] == "Stream/Output/Audio") | .id')
 
 
 
